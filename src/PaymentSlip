@@ -1,0 +1,30 @@
+public class PaymentSlip {
+    
+    private String name;
+	private int hourlyRate;
+	private int hours;
+
+    public PaymentSlip() {   
+    }
+
+	pulic PaymentSlip(String name, int hourlyRate, int hours) {
+		this.name = name;
+		this.hourlyRate = hourlyRate;
+		this.hours = hours;
+	}
+
+	public int calculateSalary() {
+		return hours * hourlyRate;
+	}
+
+	public double calculateNetSalary() {
+		return calculateSalary() * 0.7;
+	}
+
+	public void printSlip() {
+		System.out.printf(
+				"--------------------  \n ## PAYMENT INFORMATION ## \n Name: \t\t\t %s \n Hourly rate: \t\t %d \n Hours worked: \t\t %d \n \n Salary before tax: \t %d \n "
+						+  "Salary after tax: \t %f \n \n If you have any questions regarding your salary, contact Bob \n --------------------",
+				name, hourlyRate, hours, calculateSalary(), calculateNetSalary());
+	}
+}
